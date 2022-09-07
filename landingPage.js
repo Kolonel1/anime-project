@@ -83,7 +83,8 @@ function contentLoaded() {
             if(element.genres.length === 3){
               genre = `${element.genres[0].name},${element.genres[1].name},${element.genres[2].name}`
             }}} */
- 
+             
+            let genre = `${element.genres[0].name}`
              li5.textContent = `Genre:${genre}`
             a.appendChild(img)
             a.appendChild(li1)
