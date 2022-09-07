@@ -3,14 +3,44 @@ document.addEventListener('DOMContentLoaded', contentLoaded)
 function contentLoaded() {
 
     let searchButton = document.querySelector('.submit')
+    searchButton.addEventListener('mouseenter',colorChange)
+    searchButton.addEventListener('mouseleave',changeColor)
+    function colorChange(e){
+    let button = e.target
+    button.style.color = 'yellow'
+      
+     /* if(color !== 'grey'){
+        color = 'grey'
+        return color
+      }
+      else if (color === 'grey'){
+        color = 'blue'
+        return color
+      }*/
+
+       }
+
+    function changeColor(e){
+      let button = e.target
+      button.style.color = 'blue'
+    }
+
+
     let form = document.querySelector('form')
     form.addEventListener('submit',
     listAnime)
 
     function listAnime(e) {
-        e.preventDefault()
-        let mainForm = e.target
-      let animeName = e.target.input.value
+    e.preventDefault()
+    let mainForm = e.target
+    let animeName = e.target.input.value
+
+
+      if (animeName === ''){
+        alert('please input something')}
+        else if (animeName !== ''){
+
+          
       
     let animeUrl = `https://api.jikan.moe/v4/anime?q=${animeName}&sfw`
       fetch(animeUrl)
@@ -20,7 +50,8 @@ function contentLoaded() {
 
       function displayer(array){
         for(let element of array.data){
-            console.log(element)
+          if(  (element.popularity>0) && (element.popularity<500) ){
+          
 
             
             let li1= document.createElement('li')
@@ -36,27 +67,33 @@ function contentLoaded() {
             img.src = `${element.images.jpg.image_url}`
             let a = document.createElement('a')
             a.href = `${element.url}`
-            a.appendChild(img)
-            li1.appendChild(a)
+          
+        
 
             li3.textContent = `Title:${element.title}`
             li4.textContent = `Number of episodes:${element.episodes}`
+          
           
             a.appendChild(img)
             a.appendChild(li1)
             a.appendChild(li3)
             a.appendChild(li4)
-            div.appendChild(a)
+            div.append(a)
             //div.appendChild(li2)
             //div.appendChild(li3)
             //div.appendChild(li4)
 
-            ul.appendChild(div)
+            ul.append(div)
+         
+         
+    
 
 
+          }
 
-
-
+         else if(element.populatiry > 400){alert('no popular anime for now in the search list')
+            
+          }
         }
       }
 
@@ -72,6 +109,12 @@ function contentLoaded() {
 }
 
 
+
+ 
+  
+
+
+}
 
 
 

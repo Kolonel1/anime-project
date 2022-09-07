@@ -40,8 +40,18 @@ ul {
     padding: 10px;
    color: black;
    font-size: .8em;
-   background-color: bisque;
-   margin: 8px;
-   max-width: fit-content;
+   background-color:rgb(82, 136, 197);
+   margin:8px;
+   max-width:min-content;
 
+}
+h1,h3 {
+    color: antiquewhite;
+}
+
+#input {
+    color: black;
+}
+footer h3{
+    color: aquamarine;
 }
