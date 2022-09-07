@@ -34,6 +34,7 @@ header {
 
 ul {
     list-style: none;
+    text-decoration: none;
 }
 
 .anime_div {
@@ -55,3 +56,45 @@ h1,h3 {
 footer h3{
     color: aquamarine;
 }
+.home-page-circle-1 {
+    position: absolute;
+    width: 25vw;
+    height: 25vh;
+    border-radius: 50%;
+    background-color: rgba(49, 42, 85 ,0.5);
+    bottom: 5%;
+    left: 5vw;
+    z-index: -1; /* this makes it to be behind everything by default */
+
+}
+.home-page-circle-3  {
+    position: absolute;
+    width: 25vw;
+    height: 25vh;
+    border-radius: 50%;
+    background-color: rgba(41, 151, 47, 0.1);
+    top: 15%;
+    right: 30vw;
+    z-index: -1;
+} 
+
+.footer-nav {
+    justify-content: space-between;
+    display: flex;
+
+}
+
+.footer-nav a:hover {
+    color: #adadad;
+}
+
+.footer-nav a {
+padding: 1em;
+text-decoration: none;
+color: antiquewhite;
+}
+
+a {
+    text-decoration: none;
+}
+

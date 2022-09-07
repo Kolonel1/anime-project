@@ -55,9 +55,10 @@ function contentLoaded() {
 
             
             let li1= document.createElement('li')
-           // let li2=document.createElement('li')
+            let li2=document.createElement('li')
             let li3 = document.createElement('li')
             let li4 = document.createElement('li')
+            let li5=document.createElement('li')
 
             let div = document.createElement('div')
             div.className = 'anime_div'
@@ -69,51 +70,41 @@ function contentLoaded() {
             a.href = `${element.url}`
           
         
-
+            li2.textContent=`Studios:${element.studios[0].name}`
             li3.textContent = `Title:${element.title}`
             li4.textContent = `Number of episodes:${element.episodes}`
-          
-          
+            
+           /* console.log(element.genres.length)
+            if(element.genres.length === 1){
+              let genre =`${element.genres[0].name}` 
+            if(element.genres.length ===2){
+              genre = `${element.genres[0].name},${element.genres[1].name}`
+            
+            if(element.genres.length === 3){
+              genre = `${element.genres[0].name},${element.genres[1].name},${element.genres[2].name}`
+            }}} */
+ 
+             li5.textContent = `Genre:${genre}`
             a.appendChild(img)
             a.appendChild(li1)
+            a.appendChild(li2)
             a.appendChild(li3)
+            a.appendChild(li5)
             a.appendChild(li4)
             div.append(a)
             //div.appendChild(li2)
             //div.appendChild(li3)
             //div.appendChild(li4)
 
-            ul.append(div)
+            ul.append(div)}
          
-         
-    
-
-
-          }
-
-         else if(element.populatiry > 400){alert('no popular anime for now in the search list')
-            
+       else if(element.populatiry > 400){alert('no popular anime for now in the search list')   
           }
         }
       }
-
-
-
-
-
         mainForm.reset()
     }
-
-
-
-}
-
-
-
- 
-  
-
-
+  }
 }
 
 
